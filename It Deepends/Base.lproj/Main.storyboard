@@ -1,0 +1,335 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14087.3" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="LW7-p5-aXb">
+    <device id="retina5_9" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14075.4"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Depth Image View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="DepthImageViewController" customModule="It_Deepends" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2AA-SP-0wI">
+                                <rect key="frame" x="0.0" y="24" width="375" height="754"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="Pa4-mJ-Z3i" appends="YES" id="lRE-UR-fGo"/>
+                                </connections>
+                            </imageView>
+                            <view alpha="0.29999999999999999" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kcq-h2-icH">
+                                <rect key="frame" x="0.0" y="709" width="375" height="69"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <visualEffectView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DGW-25-vr1">
+                                <rect key="frame" x="0.0" y="709" width="375" height="69"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" id="3Yz-kK-FRI">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="69"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <visualEffectView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uIa-0Q-sDh">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="69"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" id="1cS-zd-017">
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="69"/>
+                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                <subviews>
+                                                    <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Vv4-yH-h0S">
+                                                        <rect key="frame" x="16" y="730" width="343" height="29"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <segments>
+                                                            <segment title="Original"/>
+                                                            <segment title="Depth"/>
+                                                            <segment title="Mask"/>
+                                                            <segment title="Filtered"/>
+                                                        </segments>
+                                                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <connections>
+                                                            <action selector="segementedControlValueChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="Q8W-Rk-eQb"/>
+                                                        </connections>
+                                                    </segmentedControl>
+                                                </subviews>
+                                            </view>
+                                            <vibrancyEffect>
+                                                <blurEffect style="light"/>
+                                            </vibrancyEffect>
+                                        </visualEffectView>
+                                    </subviews>
+                                </view>
+                                <blurEffect style="light"/>
+                            </visualEffectView>
+                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.98999999999999999" minValue="0.01" maxValue="0.98999999999999999" translatesAutoresizingMaskIntoConstraints="NO" id="uds-06-zEJ">
+                                <rect key="frame" x="14" y="671" width="347" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <action selector="sliderValueChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="1SN-3z-Kig"/>
+                                </connections>
+                            </slider>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="91I-Ge-X0c">
+                                <rect key="frame" x="0.0" y="44" width="375" height="58"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <view alpha="0.29999999999999999" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tBI-jd-ftX">
+                                        <rect key="frame" x="0.0" y="-20" width="375" height="78"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                    </view>
+                                    <visualEffectView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zwo-e0-kZO">
+                                        <rect key="frame" x="0.0" y="-20" width="375" height="78"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" id="tPr-8J-Mk2">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="78"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                            <subviews>
+                                                <visualEffectView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gHp-vM-wmB">
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="78"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" id="2uj-By-Zhk">
+                                                        <rect key="frame" x="0.0" y="0.0" width="375" height="78"/>
+                                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                        <subviews>
+                                                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Yry-mb-CrC">
+                                                                <rect key="frame" x="8" y="30" width="359" height="29"/>
+                                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                <segments>
+                                                                    <segment title="Spotlight"/>
+                                                                    <segment title="Color"/>
+                                                                    <segment title="Blur"/>
+                                                                </segments>
+                                                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                                <connections>
+                                                                    <action selector="filterTypeChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="1fr-hT-gJI"/>
+                                                                </connections>
+                                                            </segmentedControl>
+                                                        </subviews>
+                                                    </view>
+                                                    <vibrancyEffect>
+                                                        <blurEffect style="light"/>
+                                                    </vibrancyEffect>
+                                                </visualEffectView>
+                                            </subviews>
+                                        </view>
+                                        <blurEffect style="light"/>
+                                    </visualEffectView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="depthSlider" destination="uds-06-zEJ" id="NCS-fE-I5h"/>
+                        <outlet property="filterControl" destination="Yry-mb-CrC" id="FWs-Im-f3f"/>
+                        <outlet property="filterControlView" destination="91I-Ge-X0c" id="jop-X4-FLL"/>
+                        <outlet property="imageModeControl" destination="Vv4-yH-h0S" id="VMe-r3-8At"/>
+                        <outlet property="imageView" destination="2AA-SP-0wI" id="5n4-ok-PzZ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="Pa4-mJ-Z3i">
+                    <connections>
+                        <action selector="imageTapped:" destination="BYZ-38-t0r" id="PY6-li-12d"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="138.91625615763547"/>
+        </scene>
+        <!--Depth Image View Controller-->
+        <scene sceneID="m6x-Rd-NKR">
+            <objects>
+                <viewController id="LW7-p5-aXb" customClass="DepthImageViewController" customModule="It_Deepends" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="LAH-VK-zR5">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fH9-33-GiL">
+                                <rect key="frame" x="0.0" y="24" width="375" height="754"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="x2j-Kg-8BD" appends="YES" id="Y58-JE-dvY"/>
+                                </connections>
+                            </imageView>
+                            <view alpha="0.30000001192092896" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ONy-Qg-3Kz">
+                                <rect key="frame" x="0.0" y="709" width="375" height="69"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="69" id="trx-NW-1VP"/>
+                                </constraints>
+                            </view>
+                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ldp-gD-xOS">
+                                <rect key="frame" x="0.0" y="709" width="375" height="69"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="I1m-SI-sZi">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="69"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <visualEffectView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VS7-5Q-mfR">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="69"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" id="SYC-cX-TBS">
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="69"/>
+                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                <subviews>
+                                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="y2O-xq-Cdi">
+                                                        <rect key="frame" x="16" y="730" width="343" height="29"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="28" id="uwa-nV-ufI"/>
+                                                        </constraints>
+                                                        <segments>
+                                                            <segment title="Original"/>
+                                                            <segment title="Depth"/>
+                                                            <segment title="Mask"/>
+                                                            <segment title="Filtered"/>
+                                                        </segments>
+                                                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <connections>
+                                                            <action selector="segementedControlValueChanged:" destination="LW7-p5-aXb" eventType="valueChanged" id="dZN-mE-LZT"/>
+                                                        </connections>
+                                                    </segmentedControl>
+                                                </subviews>
+                                            </view>
+                                            <vibrancyEffect>
+                                                <blurEffect style="light"/>
+                                            </vibrancyEffect>
+                                        </visualEffectView>
+                                    </subviews>
+                                </view>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="69" id="oPt-Et-xjx"/>
+                                </constraints>
+                                <blurEffect style="light"/>
+                            </visualEffectView>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.99000000953674316" minValue="0.0099999997764825821" maxValue="0.99000000953674316" translatesAutoresizingMaskIntoConstraints="NO" id="rCk-Th-chl">
+                                <rect key="frame" x="14" y="671" width="347" height="31"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="Ys4-pO-xnR"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="sliderValueChanged:" destination="LW7-p5-aXb" eventType="valueChanged" id="le5-sQ-tIu"/>
+                                </connections>
+                            </slider>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Xj-wk-un5">
+                                <rect key="frame" x="0.0" y="44" width="375" height="58"/>
+                                <subviews>
+                                    <view alpha="0.30000001192092896" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rek-z9-14k">
+                                        <rect key="frame" x="0.0" y="-20" width="375" height="78"/>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                    </view>
+                                    <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h8c-se-THa">
+                                        <rect key="frame" x="0.0" y="-20" width="375" height="78"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="zjq-Hy-xSu">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="78"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                            <subviews>
+                                                <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kpN-NI-akg">
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="78"/>
+                                                    <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="08o-il-Mqf">
+                                                        <rect key="frame" x="0.0" y="0.0" width="375" height="78"/>
+                                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                        <subviews>
+                                                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="CKE-2m-6wR">
+                                                                <rect key="frame" x="8" y="30" width="359" height="29"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="28" id="4x4-Ym-HSd"/>
+                                                                </constraints>
+                                                                <segments>
+                                                                    <segment title="Spotlight"/>
+                                                                    <segment title="Color"/>
+                                                                    <segment title="Blur"/>
+                                                                </segments>
+                                                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                                <connections>
+                                                                    <action selector="filterTypeChanged:" destination="LW7-p5-aXb" eventType="valueChanged" id="9M5-2e-3Ma"/>
+                                                                </connections>
+                                                            </segmentedControl>
+                                                        </subviews>
+                                                        <constraints>
+                                                            <constraint firstAttribute="bottom" secondItem="CKE-2m-6wR" secondAttribute="bottom" constant="20" id="1gE-Vy-7Xq"/>
+                                                            <constraint firstAttribute="trailing" secondItem="CKE-2m-6wR" secondAttribute="trailing" constant="8" id="MNu-gG-rj8"/>
+                                                            <constraint firstItem="CKE-2m-6wR" firstAttribute="leading" secondItem="08o-il-Mqf" secondAttribute="leading" constant="8" id="sA5-GR-HMa"/>
+                                                        </constraints>
+                                                    </view>
+                                                    <vibrancyEffect>
+                                                        <blurEffect style="light"/>
+                                                    </vibrancyEffect>
+                                                </visualEffectView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="kpN-NI-akg" firstAttribute="centerY" secondItem="zjq-Hy-xSu" secondAttribute="centerY" id="31R-VQ-Xus"/>
+                                                <constraint firstItem="kpN-NI-akg" firstAttribute="centerX" secondItem="zjq-Hy-xSu" secondAttribute="centerX" id="4ud-x5-8lY"/>
+                                                <constraint firstItem="kpN-NI-akg" firstAttribute="width" secondItem="zjq-Hy-xSu" secondAttribute="width" id="PQh-ph-C2X"/>
+                                                <constraint firstItem="kpN-NI-akg" firstAttribute="height" secondItem="zjq-Hy-xSu" secondAttribute="height" id="g4p-vW-BOf"/>
+                                            </constraints>
+                                        </view>
+                                        <blurEffect style="light"/>
+                                    </visualEffectView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="rek-z9-14k" firstAttribute="width" secondItem="h8c-se-THa" secondAttribute="width" id="3gj-Q3-NEg"/>
+                                    <constraint firstItem="rek-z9-14k" firstAttribute="centerY" secondItem="h8c-se-THa" secondAttribute="centerY" id="DTW-fi-kBT"/>
+                                    <constraint firstItem="h8c-se-THa" firstAttribute="top" secondItem="5Xj-wk-un5" secondAttribute="top" constant="-20" id="IOH-01-jsG"/>
+                                    <constraint firstAttribute="height" constant="58" id="JEI-HV-aF6"/>
+                                    <constraint firstItem="rek-z9-14k" firstAttribute="centerX" secondItem="h8c-se-THa" secondAttribute="centerX" id="Jsx-k2-vBh"/>
+                                    <constraint firstItem="h8c-se-THa" firstAttribute="width" secondItem="5Xj-wk-un5" secondAttribute="width" id="Xbs-vc-Hfl"/>
+                                    <constraint firstItem="h8c-se-THa" firstAttribute="centerX" secondItem="5Xj-wk-un5" secondAttribute="centerX" id="g6i-LJ-gZd"/>
+                                    <constraint firstAttribute="bottom" secondItem="h8c-se-THa" secondAttribute="bottom" id="kLQ-7k-2sA"/>
+                                    <constraint firstItem="rek-z9-14k" firstAttribute="height" secondItem="h8c-se-THa" secondAttribute="height" id="q6z-uf-Luu"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="fH9-33-GiL" firstAttribute="trailing" secondItem="y2O-xq-Cdi" secondAttribute="trailing" constant="16" id="337-e6-rcD"/>
+                            <constraint firstItem="rCk-Th-chl" firstAttribute="leading" secondItem="fH9-33-GiL" secondAttribute="leading" constant="16" id="7rf-Pv-XFQ"/>
+                            <constraint firstItem="Ldp-gD-xOS" firstAttribute="centerX" secondItem="fH9-33-GiL" secondAttribute="centerX" id="ErJ-hS-kzk"/>
+                            <constraint firstItem="5Xj-wk-un5" firstAttribute="top" secondItem="FP2-Az-uEH" secondAttribute="top" id="Gt5-T7-q0d"/>
+                            <constraint firstItem="Ldp-gD-xOS" firstAttribute="width" secondItem="fH9-33-GiL" secondAttribute="width" id="HGb-KB-oWS"/>
+                            <constraint firstItem="fH9-33-GiL" firstAttribute="trailing" secondItem="rCk-Th-chl" secondAttribute="trailing" constant="16" id="Ium-LI-Ytk"/>
+                            <constraint firstItem="5Xj-wk-un5" firstAttribute="leading" secondItem="FP2-Az-uEH" secondAttribute="leading" id="NHf-DV-NTM"/>
+                            <constraint firstItem="FP2-Az-uEH" firstAttribute="trailing" secondItem="ONy-Qg-3Kz" secondAttribute="trailing" id="Usw-na-YiO"/>
+                            <constraint firstItem="Ldp-gD-xOS" firstAttribute="bottom" secondItem="fH9-33-GiL" secondAttribute="bottom" id="Y82-kZ-Idk"/>
+                            <constraint firstItem="FP2-Az-uEH" firstAttribute="trailing" secondItem="fH9-33-GiL" secondAttribute="trailing" id="YFQ-pe-pnZ"/>
+                            <constraint firstItem="fH9-33-GiL" firstAttribute="bottom" secondItem="y2O-xq-Cdi" secondAttribute="bottom" constant="20" id="YXX-1u-aA9"/>
+                            <constraint firstItem="ONy-Qg-3Kz" firstAttribute="leading" secondItem="FP2-Az-uEH" secondAttribute="leading" id="dRh-C9-eS5"/>
+                            <constraint firstItem="FP2-Az-uEH" firstAttribute="trailing" secondItem="5Xj-wk-un5" secondAttribute="trailing" id="gMY-Qz-VXt"/>
+                            <constraint firstItem="FP2-Az-uEH" firstAttribute="top" secondItem="fH9-33-GiL" secondAttribute="top" constant="20" id="idh-mR-Hab"/>
+                            <constraint firstItem="y2O-xq-Cdi" firstAttribute="leading" secondItem="fH9-33-GiL" secondAttribute="leading" constant="16" id="lC6-Um-B7b"/>
+                            <constraint firstItem="fH9-33-GiL" firstAttribute="leading" secondItem="FP2-Az-uEH" secondAttribute="leading" id="lhr-mA-w6v"/>
+                            <constraint firstItem="FP2-Az-uEH" firstAttribute="bottom" secondItem="ONy-Qg-3Kz" secondAttribute="bottom" id="qdK-nb-8mL"/>
+                            <constraint firstItem="Ldp-gD-xOS" firstAttribute="top" secondItem="rCk-Th-chl" secondAttribute="bottom" constant="8" id="uNb-f1-brY"/>
+                            <constraint firstItem="FP2-Az-uEH" firstAttribute="bottom" secondItem="fH9-33-GiL" secondAttribute="bottom" id="yM3-zC-tQb"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="FP2-Az-uEH"/>
+                    </view>
+                    <connections>
+                        <outlet property="depthSlider" destination="rCk-Th-chl" id="1CZ-Kh-YeK"/>
+                        <outlet property="filterControl" destination="CKE-2m-6wR" id="Lyj-ym-pKi"/>
+                        <outlet property="filterControlView" destination="5Xj-wk-un5" id="7EB-kW-NWg"/>
+                        <outlet property="imageModeControl" destination="y2O-xq-Cdi" id="TpA-mI-Ha5"/>
+                        <outlet property="imageView" destination="fH9-33-GiL" id="IP2-4M-IRY"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wbB-1T-ByD" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="x2j-Kg-8BD">
+                    <connections>
+                        <action selector="imageTapped:" destination="LW7-p5-aXb" id="YsN-qx-kMP"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="966" y="148"/>
+        </scene>
+    </scenes>
+</document>
